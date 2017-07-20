@@ -282,6 +282,13 @@ static char const * const kEmptyDataSetView =       "emptyDataSetView";
     }
     return 0.0;
 }
+- (Boolean)dzn_isInverted
+{
+    if (self.emptyDataSetSource && [self.emptyDataSetSource respondsToSelector:@selector(isInverted)]) {
+        return [self.emptyDataSetSource isInverted];
+    }
+    return false;
+}
 
 
 #pragma mark - Delegate Getters & Events (Private)
@@ -558,6 +565,7 @@ static char const * const kEmptyDataSetView =       "emptyDataSetView";
     else if (self.isEmptyDataSetVisible) {
         [self dzn_invalidate];
     }
+    self.emptyDataSetView.contentView.transform = [self dzn_isInverted] ? CGAffineTransformMake(1, 0, 0, -1, 0, 0) : CGAffineTransformIdentity;
 }
 
 - (void)dzn_invalidate

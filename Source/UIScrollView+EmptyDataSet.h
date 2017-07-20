@@ -155,6 +155,11 @@ NS_ASSUME_NONNULL_BEGIN
  */
 - (CGFloat)spaceHeightForEmptyDataSet:(UIScrollView *)scrollView;
 
+/**
+ Asks the data source whether the view should be inverted. Default is false.
+ */
+- (Boolean)isInverted;
+
 @end
 
 
