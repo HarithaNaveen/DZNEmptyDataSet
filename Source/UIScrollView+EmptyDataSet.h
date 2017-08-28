@@ -160,6 +160,30 @@ NS_ASSUME_NONNULL_BEGIN
  */
 - (Boolean)isInverted;
 
+/**
+ Asks the data source for the button's border width. Default is 0.
+ 
+ @param scrollView A scrollView subclass object informing the delegate.
+ @return The button's border width.
+ */
+- (CGFloat)buttonBorderWidthForEmptyDataSet:(UIScrollView *)scrollView;
+
+/**
+ Asks the data source for the color of the border. Default is clear.
+ 
+ @param scrollView A scrollView subclass object informing the delegate.
+ @return The button's border color.
+ */
+- (CGColorRef)buttonBorderColorForEmptyDataSet:(UIScrollView *)scrollView;
+
+/**
+ Asks the data source for the corner radius of the button. Default is 0.
+ 
+ @param scrollView A scrollView subclass object informing the delegate.
+ @return The button's corner radius.
+ */
+- (CGFloat)buttonBorderCornerRadiusForEmptyDataSet:(UIScrollView *)scrollView;
+
 @end
 
 
